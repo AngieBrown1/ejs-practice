@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EJS Practice</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJS Practice</title>
 </head>
+
 <body>
-    <h1>EJS Practice</h1>
+
+  <!-- Inlcude partials -->
+  <%- include ('partials/header') %>
+  <main>
+    <h2>Welcome!</h2>
     <h2>Hello, <%= person.name %></h2>
     <h3>Occupation: <%= person.occupation%></h3>
     <h3>Favorite Color: <%= person.favoriteColor%></h3>
     <% if (person.occupation === 'Plumber') { %>
-        <p>You Work With pipes!</p>
-        <% } else { %>
-            <p>Thats an interesting job!</p>
+    <p>You Work With pipes!</p>
+    <% } else { %>
+    <p>Thats an interesting job!</p>
     <%} %>
 
-        <% if (person.favoriteColor === 'Blue') { %>
-        <p>That's a great color!</p>
-        <% } else { %>
-            <p>Thats a pretty color!</p>
+    <% if (person.favoriteColor === 'Blue') { %>
+    <p>That's a great color!</p>
+    <% } else { %>
+    <p>Thats a pretty color!</p>
     <%} %>
-    
-    <a href="/friends" class="friends-button">Your Friends</a>
-    <a href="/movies" class="movies-button">My Favorite Movies</a>
+  </main>
+  <%- include ('partials/footer') %>
+
+
 </body>
+
 </html>
