@@ -24,6 +24,10 @@ app.get('/friends', (req, res) => {
     res.render('friends', {friends});
 });
 
+app.get('/movies', (req, res) => {
+    const movies = ['Music and Lyrics', 'Chitty Chitty Bang Bang', 'Nitro Cirucs: The Movie', 'Paw Patrol: The Mighty Movie'];
+    res.render('movies', {movies});
+});
 // Start the server on the designated port
 app.listen(PORT, () => {
     console.log(`Server is running at 
