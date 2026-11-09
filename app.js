@@ -5,7 +5,7 @@ import express from 'express';
 const app = express();
 
 //Define a port number where our server will listen
-const PORT = 3000;
+const PORT = 3008;
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
@@ -15,7 +15,13 @@ app.use(express.static('public'));
 
 // Define a default route ("/")
 app.get('/', (req, res) => {
-    res.render('home');
+    const person = {name: 'Donald Duck', occupation: 'Plumber', favoriteColor: 'Blue'};
+    res.render('home', {person});
+});
+
+app.get('/friends', (req, res) => {
+    const friends = ['Mickey', 'Goofy', 'Minnie', 'Daisy'];
+    res.render('friends', {friends});
 });
 
 // Start the server on the designated port
